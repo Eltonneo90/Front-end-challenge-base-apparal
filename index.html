@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Base Apparel</title>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              DesaturatedRed: "hsl(0, 36%, 70%)",
+              SoftRed: "hsl(0, 93%, 68%)",
+              DarkGrayishRed: "hsl(0, 6%, 24%)",
+              gradient1: "hsl(0, 80%, 86%)",
+              gradient2: "hsl(0, 74%, 74%)",
+            },
+          },
+          screens: {
+            sm: "375px",
+            md: "900px",
+            lg: "976px",
+            xl: "1440px",
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="flex items-center md:hidden">
+      <div class="m-10 flex">
+        <img src="img/logo.svg" class="max-w-full h-6 md:h-8" alt="" />
+      </div>
+    </nav>
+    <section
+      class="flex flex-col items-center md:items-start md:justify-between md:flex-row-reverse"
+    >
+      <!-- Image -->
+      <img
+        src="img/hero-desktop.jpg"
+        class="hidden md:sticky md:top-0 md:inline md:shrink-0 md:h-screen md:max-w-full"
+        alt=""
+      />
+      <img
+        src="img/hero-mobile.jpg"
+        class="w-screen object-top object-cover md:h-screen md:hidden"
+        alt=""
+      />
+      <!-- Left side -->
+      <div
+        class="container flex max-w-lg flex-col text-center space-y-9 md:space-y-10 md:mt-12 md:text-left md:flex-col md:ml-32"
+      >
+        <div class="hidden md:my-10 md:flex">
+          <img src="img/logo.svg" class="max-w-full h-6 md:h-8" alt="" />
+        </div>
+        <div
+          class="text-5xl tracking-[1rem] !mt-16 md:auto-cols-min md:text-6xl md:mt-10"
+        >
+          <h1 class="text-DesaturatedRed font-[300]">
+            WE'RE
+            <p class="text-DarkGrayishRed font-[800] text-wrap">COMING SOON</p>
+          </h1>
+        </div>
+
+        <p class="text-DesaturatedRed px-8 md:p-0 font-[300] font-bold">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <!-- Email -->
+        <form action="/" class="pb-16">
+          <div class="flex justify-center md:justify-start">
+            <input
+              type="email"
+              id="email_input"
+              placeholder="Email Address"
+              class="ring-2 ring-gray-500 ring-inset rounded-full h-12 w-80 pl-6 focus:ring-black focus:outline-none md:w-96"
+            />
+            <button
+              type="submit"
+              onclick="checkemail()"
+              class="bg-gradient-to-br from-gradient1 to-gradient2 w-16 h-12 rounded-full relative ml-[-40px] hover:opacity-80 md:ml-[-60px] md:w-24"
+            >
+              <img src="img/icon-arrow.svg" class="mx-auto" alt="" />
+            </button>
+          </div>
+          <p id="errortext" class="hidden text-SoftRed pl-6 mt-2 text-xs">
+            Please provide a valid email
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <style>
+      .custom_button_color {
+        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      }
+    </style>
+
+    <script src="script.js"></script>
+  </body>
+</html>
